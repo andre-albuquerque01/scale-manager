@@ -21,6 +21,7 @@ export default function NavBar() {
                         <li className="hover:underline"><Link href="/cadastroEscala">Cadastro Escala</Link></li>
                         <li className="hover:underline"><Link href="/CadastroFuncPosto">Alocação Posto</Link></li>
                         <li className="hover:underline"><Link href="/CadastroFuncEscala">Alocação Escala</Link></li>
+                        <li className="hover:underline"><Link href="/CadastroAfastamento">Afastamento</Link></li>
                         <li className="hover:underline"><Link href="/EditRegistro">Perfil</Link></li>
                         <li className="hover:underline"><Link href="/logout">Sair</Link></li>
                     </ul>

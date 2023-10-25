@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AfastamentoController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Dashboard;
 use App\Http\Controllers\EscalaController;
@@ -54,20 +55,20 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/EditFuncEscala/{id}', [FuncEscalaController::class, 'editRel'])->name('EditFuncEscala');
     Route::post('/UpFuncEscala', [FuncEscalaController::class, 'update'])->name('UpFuncEscala');
     Route::get('/deleteFuncEscala/{id}', [FuncEscalaController::class, 'destroy'])->name('UpFuncEscala');
-    
+
     // Alocação Posto
     Route::get('/CadastroFuncPosto', [FuncPostoController::class, 'show'])->name('CadastroFuncPosto');
     Route::post('/CadFuncPosto', [FuncPostoController::class, 'store'])->name('CadFuncPosto');
     Route::get('/EditFuncPosto/{id}', [FuncPostoController::class, 'edit'])->name('EditFuncPosto');
     Route::post('/UpFuncPosto', [FuncPostoController::class, 'update'])->name('UpFuncPosto');
     Route::get('/deleteFuncPosto/{id}', [FuncPostoController::class, 'destroy'])->name('deleteFuncPosto');
-
-    // Cadastro sala
-    // Route::get('/cadastroSala', [RelController::class, 'show'])->name('CadastroSala');
-    // Route::post('/cadSala', [RelController::class, 'store'])->name('cadSala');
-    // Route::get('/editSala/{id}', [RelController::class, 'edit'])->name('editSala');
-    // Route::post('/updateSala', [RelController::class, 'update'])->name('upSala');
-    // Route::get('/deleteSala/{id}', [RelController::class, 'destroy'])->name('deleteSala');
+    
+    // Afastamento
+    Route::get('/CadastroAfastamento', [AfastamentoController::class, 'show'])->name('CadastroAfastamento');
+    Route::post('/CadAfastamento', [AfastamentoController::class, 'store'])->name('CadAfastamento');
+    Route::get('/EditAfastamento/{id}', [AfastamentoController::class, 'edit'])->name('EditAfastamento');
+    Route::post('/UpAfastamento', [AfastamentoController::class, 'update'])->name('UpAfastamento');
+    Route::get('/deleteAfastamento/{id}', [AfastamentoController::class, 'destroy'])->name('deleteAfastamento');
 
     Route::get('EditRegistro', [RegisteredUserController::class, 'show'])
         ->name('EditRegistro');

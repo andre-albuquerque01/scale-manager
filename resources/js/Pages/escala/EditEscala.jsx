@@ -22,8 +22,6 @@ export default function EditEscala() {
                     <div className="mt-5 text-2xl">
                         <h1>Cadastro da Escala</h1>
                     </div>
-                    <div className="flex flex-col space-y-1 mt-4">
-                        <label htmlFor="dataNasc">Horario do posto::</label>
                         <input
                             type="hidden"
                             name="idEscala"
@@ -33,6 +31,8 @@ export default function EditEscala() {
                             value={data.idEscala}
                             onChange={(e) => setData('idEscala', e.target.value)}
                             required />
+                    <div className="flex flex-col space-y-1 mt-4">
+                        <label htmlFor="idEhorarioPostoscala">Horario do posto:</label>
                         <input
                             type="text"
                             name="horarioPosto"

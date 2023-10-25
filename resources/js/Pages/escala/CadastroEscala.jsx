@@ -23,7 +23,7 @@ export default function CadastroEscala() {
                         <h1>Cadastro da Escala</h1>
                     </div>
                     <div className="flex flex-col space-y-1 mt-4">
-                        <label htmlFor="dataNasc">Horario do posto:</label>
+                        <label htmlFor="horarioPosto">Horario do posto:</label>
                         <input
                             type="text"
                             name="horarioPosto"
