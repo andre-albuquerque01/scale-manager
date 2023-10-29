@@ -52,7 +52,7 @@ Route::middleware(['auth'])->group(function () {
     // Alocação Escala
     Route::get('/CadastroFuncEscala', [FuncEscalaController::class, 'show'])->name('CadastroFuncEscala');
     Route::post('/CadFuncEscala', [FuncEscalaController::class, 'store'])->name('CadFuncEscala');
-    Route::get('/EditFuncEscala/{id}', [FuncEscalaController::class, 'editRel'])->name('EditFuncEscala');
+    Route::get('/EditFuncEscala/{id}', [FuncEscalaController::class, 'edit'])->name('EditFuncEscala');
     Route::post('/UpFuncEscala', [FuncEscalaController::class, 'update'])->name('UpFuncEscala');
     Route::get('/deleteFuncEscala/{id}', [FuncEscalaController::class, 'destroy'])->name('UpFuncEscala');
 
