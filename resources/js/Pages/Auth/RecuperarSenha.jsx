@@ -1,18 +1,17 @@
 import GuestLayout from '@/Layouts/GuestLayout';
 import { Head, useForm } from '@inertiajs/react';
+import { useEffect } from 'react';
 
 export default function Login() {
     const { data, setData, post, errors } = useForm({
         email: '',
     });
+
     const submit = (e) => {
         e.preventDefault();
         post(route('recuperaEmail'));
-        if(errors.email == 'E-mail não cadastrado'){
-            alert('E-mail está sendo enviado!')
-        }
     };
-    console.log(errors.email );
+
 
     return (
         <GuestLayout>

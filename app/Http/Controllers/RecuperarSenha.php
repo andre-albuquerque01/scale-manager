@@ -34,6 +34,8 @@ class RecuperarSenha extends Controller
             'message' => 'Sua senha foi redefinida, agora é ' . $newPassword . ', solicitamos que altere essa senha. Para alterar é só ir em `Perfil`'
         ]));
 
-        // return redirect(route('login'));
+        return back()->with([
+            'email'=> 'E-mail enviado para sua caixa de email'
+        ])->onlyInput('email');
     }
 }

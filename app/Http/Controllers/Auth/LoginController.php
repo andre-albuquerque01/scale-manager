@@ -25,18 +25,17 @@ class LoginController extends Controller
         $credenciais = $request->validate([
             'email' => 'required|email',
             'password' => 'required'
-        ], [
-            'email.email' => 'O email não é válido'
         ]);
-    
+
         if (Auth::attempt($credenciais)) {
             $request->session()->regenerate();
             return redirect(route('dashboard'));
-        } else {
-            return redirect(route('login'));    
         }
+        return back()->withErrors([
+            'email' => 'As credenciais fornecidas não correspondem ao do nosso registro.',
+        ])->onlyInput('email');
     }
-    
+
     public function destroy()
     {
         auth()->logout();

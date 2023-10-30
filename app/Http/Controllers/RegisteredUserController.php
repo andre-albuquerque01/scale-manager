@@ -90,11 +90,9 @@ class RegisteredUserController extends Controller
                 return redirect(route('dashboard'));
             }
         } catch (\Exception $e) {
-            // Em caso de erro, você pode retornar uma resposta JSON com uma mensagem de erro
-            return response()->json([
-                'status' => 'error',
-                'message' => $e->getMessage(),
-            ]);
+            return back()->withErrors([
+                'name' => 'Houve erro ao inserir',
+            ])->onlyInput('name');
         }
     }
 
