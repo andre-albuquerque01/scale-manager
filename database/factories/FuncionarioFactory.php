@@ -18,7 +18,7 @@ class FuncionarioFactory extends Factory
     {
         return [
             'nomeCompleto' => fake()->name(),
-            'cpf' => fake()->text,
+            'cpf' => fake()->randomNumber(9),
             'endereco' => fake()->address(),
             'email' => fake()->unique()->safeEmail(),
             'telefone' => fake()->phoneNumber(),

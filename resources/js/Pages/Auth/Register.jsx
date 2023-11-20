@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import GuestLayout from '@/Layouts/GuestLayout';
-import { Head, Link, useForm } from '@inertiajs/react';
+import { Head, Link, useForm, usePage } from '@inertiajs/react';
 
 export default function Register() {
     const { data, setData, post, errors, reset } = useForm({
@@ -21,6 +21,15 @@ export default function Register() {
 
         post(route('registro'));
     };
+
+    const { props } = usePage();
+    const flash = props.flash;
+ 
+    useEffect(() => {
+        if (flash) {
+            alert(flash.success);
+        }
+    }, [flash]);
 
     return (
         <GuestLayout>

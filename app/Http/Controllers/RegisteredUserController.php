@@ -52,13 +52,12 @@ class RegisteredUserController extends Controller
                 'password' => Hash::make($request->password),
                 'remember_token' => Str::random(60),
             ]);
-            return redirect(route('dashboard'));
+            return redirect(route('entrar'));
+            // return back()->with('success', 'Seu registro foi feito como sucesso');
         } catch (\Exception $e) {
-            // Retornar um status de erro
-            return response()->json([
-                'status' => 'error',
-                'message' => $e->getMessage(),
-            ]);
+            return back()->withErrors([
+                'name' => 'Houve erro ao inserir',
+            ])->onlyInput('name');
         }
     }
 
@@ -77,7 +76,9 @@ class RegisteredUserController extends Controller
 
         try {
             if (!Hash::check($request->passwordActual, $userVerif->password)) {
-                return response()->json(['errors' => 'Senha incompativel']);
+                return back()->withErrors([
+                    'password' => 'Senha incompativel',
+                ])->onlyInput('password');
             } else {
                 User::where('id', $userVerif->id)->update([
                     'name' => $request->name,
@@ -86,8 +87,8 @@ class RegisteredUserController extends Controller
                     'remember_token' => Str::random(60),
                 ]);
 
-                // return redirect(route('dashboard'))->with('success', 'Perfil atualizado com sucesso.');
-                return redirect(route('dashboard'));
+                // return redirect(route('dashboard'));
+                return back()->with('success', 'Seu registro foi feito como sucesso');
             }
         } catch (\Exception $e) {
             return back()->withErrors([
