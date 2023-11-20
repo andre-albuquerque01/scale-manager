@@ -52,12 +52,13 @@ class RegisteredUserController extends Controller
                 'password' => Hash::make($request->password),
                 'remember_token' => Str::random(60),
             ]);
-            return redirect(route('entrar'));
+            return redirect(route('/entrar'));
             // return back()->with('success', 'Seu registro foi feito como sucesso');
         } catch (\Exception $e) {
-            return back()->withErrors([
-                'name' => 'Houve erro ao inserir',
-            ])->onlyInput('name');
+            return back()->with('err', 'Seu registro foi feito não foi realizado');
+            // return back()->withErrors([
+            //     'name' => 'Houve erro ao inserir',
+            // ])->onlyInput('name');
         }
     }
 
