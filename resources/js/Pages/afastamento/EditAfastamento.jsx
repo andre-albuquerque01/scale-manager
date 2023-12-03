@@ -48,7 +48,7 @@ export default function CadastroAfastamento() {
                         <span className="text-red-500 mt-2">{errors.motivo}</span>
                     </div>
                     <div className="flex flex-col space-y-1 mt-4">
-                        <label htmlFor="cpf">Posto:</label>
+                        <label htmlFor="idFuncionario">Funcionario:</label>
                         <select
                             name="idFuncionario"
                             id="idFuncionario"

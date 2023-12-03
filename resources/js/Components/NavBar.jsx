@@ -1,12 +1,6 @@
 import { Link, useForm } from "@inertiajs/react";
 
 export default function NavBar() {
-    // const { get } = useForm();
-    // const submit = (e) => {
-    //     e.preventDefault();
-    //     get(route('logout'));
-    //     console.log('Foi enviado');
-    // };
     return (
         <header>
             <div className='flex justify-between items-center p-5 border-b-2'>
@@ -17,11 +11,10 @@ export default function NavBar() {
                 </div>
                 <nav className='w-1/2'>
                     <ul className='list-none flex justify-evenly items-center'>
-                        <li className="hover:underline"><Link href="/cadastroPosto">Cadastro Posto</Link></li>
-                        <li className="hover:underline"><Link href="/cadastroEscala">Cadastro Escala</Link></li>
-                        <li className="hover:underline"><Link href="/CadastroFuncPosto">Alocação Posto</Link></li>
-                        <li className="hover:underline"><Link href="/CadastroFuncEscala">Alocação Escala</Link></li>
-                        <li className="hover:underline"><Link href="/CadastroAfastamento">Afastamento</Link></li>
+                        <li className="hover:underline"><Link href="/posto">Posto</Link></li>
+                        <li className="hover:underline"><Link href="/escala">Escala</Link></li>
+                        <li className="hover:underline"><Link href="/funcionarioPosto">Alocação Posto</Link></li>
+                        <li className="hover:underline"><Link href="/funcionarioEscala">Alocação Escala</Link></li>
                         <li className="hover:underline"><Link href="/EditRegistro">Perfil</Link></li>
                         <li className="hover:underline"><Link href="/logout">Sair</Link></li>
                     </ul>

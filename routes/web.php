@@ -34,7 +34,13 @@ Route::post('recuperaEmail', [RecuperarSenha::class, 'SendEmail'])->name('recupe
 Route::middleware(['auth'])->group(function () {
     // Route::get('/dashboard', [RelController::class, 'index'])->name('dashboard');
     // Route::inertia('/dashboard', 'Dashboard')->name('dashboard');
-    Route::get('/dashboard', [Dashboard::class, 'index'])->name('dashboard');
+    Route::get('/', [Dashboard::class, 'dashboard'])->name('dashboard');
+    Route::get('/dashboard', [Dashboard::class, 'dashboard'])->name('dashboard');
+    Route::get('/posto', [Dashboard::class, 'posto'])->name('posto');    
+    Route::get('/escala', [Dashboard::class, 'escala'])->name('escala');
+    Route::get('/funcionarioPosto', [Dashboard::class, 'funcionarioPosto'])->name('funcionarioPosto');
+    Route::get('/funcionarioEscala', [Dashboard::class, 'funcionarioEscala'])->name('funcionarioEscala');
+    Route::get('/funcionario/{id}', [Dashboard::class, 'funcionario'])->name('funcionario');
 
     Route::inertia('/cadastroPosto', 'posto/CadastroPosto')->name('cadastroPosto');
     Route::post('postoCadastro', [PostoController::class, 'store'])->name('postoCadastro');
